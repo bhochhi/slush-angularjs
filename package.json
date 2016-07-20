@@ -1,0 +1,28 @@
+{
+  "name": "slush-angular-app",
+  "version": "1.0.0",
+  "description": "Slush generator for angular application with client and server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "slushgenerator",
+    "angular",
+    "angularjs"
+  ],
+  "author": "Rupesh Bhochhibhoya<bhochhi@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-conflict": "^0.4.0",
+    "gulp-install": "^0.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-template": "^4.0.0",
+    "inquirer": "^1.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3"
+  }
+}

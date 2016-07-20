@@ -17,9 +17,11 @@
     "gulp": "^3.9.1",
     "gulp-conflict": "^0.4.0",
     "gulp-install": "^0.6.0",
+    "gulp-load-plugins": "^1.2.4",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^4.0.0",
-    "inquirer": "^1.1.2"
+    "inquirer": "^1.1.2",
+    "lodash": "^4.13.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",

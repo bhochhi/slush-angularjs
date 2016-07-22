@@ -1,17 +1,43 @@
 'use strict';
 var gulp = require('gulp'),
-  plugins = require('gulp-load-plugins')({lazy: true}),
-  inquirer = require('inquirer'),
-  _ = require('lodash');
+  template = require('gulp-template'),
+  conflict = require('gulp-conflict'),
+  install = require('gulp-install'),
+  inquirer = require('inquirer');
+
+  // plugins = require('gulp-load-plugins')({
+  //   lazy: true
+  // }),
+  // _ = require('lodash');
 
 
 gulp.task('default', function(done) {
   inquirer.prompt([{
-    type: 'input',
-    name: 'name',
-    message: 'What do you want to name your app?',
-    default: getNameProposal()
-  }])
+      type: 'input',
+      name: 'appName',
+      message: 'What do you want to name your app?',
+      default: getNameProposal()
+    }, {
+      type: 'confirm',
+      name: 'moveon',
+      message: 'Continue?'
+    },
+    function(answers) {
+      if (!answers.moveon) {
+        return done();
+      }
+
+      gulp.src(__dirname + '/templates/ng-full-stack/**')
+        .pipe(template(answers))
+        .pipe(conflict('./'))
+        .pipe(gulp.dest('./'))
+        .pipe(install())
+        .on('finish', function() {
+          done();
+        });
+    }
+
+  ]);
 
 });
 
